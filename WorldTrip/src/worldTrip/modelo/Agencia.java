@@ -1,7 +1,6 @@
-package wordlTrip.modelo;
+package worldTrip.modelo;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -37,7 +36,7 @@ public class Agencia {
     }
    
 
-    // MÃ©todos para la gestiÃ³n de clientes
+    // Métodos para la gestión de clientes
     public void agregarCliente(Cliente cliente) {
         listaClientes.add(cliente);
     }
@@ -47,7 +46,7 @@ public class Agencia {
             System.out.println(cliente);
         }
     }
-    // aÃ±adido para que me muestre las lista de clientes en mi ventana de gestion de clientes
+    // añadido para que me muestre las lista de clientes en mi ventana de gestion de clientes
     public List<Cliente> getListaClientes() {
         return listaClientes;
     }
@@ -59,18 +58,18 @@ public class Agencia {
         return listaReservas;
     }
     
- // MÃ©todo para buscar un cliente por su cÃ³digo
+ // Método para buscar un cliente por su código
     public Cliente buscarClientePorCodigo(int codigoCliente) {
         for (Cliente cliente : listaClientes) {
             if (cliente.getCodigo() == codigoCliente) {
                 return cliente;
             }
         }
-        return null; // Retorna null si no se encuentra el cliente con el cÃ³digo dado
+        return null; // Retorna null si no se encuentra el cliente con el código dado
     }
     
 
-    // MÃ©todos para la gestiÃ³n de tours
+    // Métodos para la gestión de tours
     public void agregarTour(Tour tour) {
         listaTours.add(tour);
     }
@@ -86,10 +85,10 @@ public class Agencia {
                 return tour;
             }
         }
-        return null; // Retorna null si no se encuentra ningÃºn tour con ese nombre
+        return null; // Retorna null si no se encuentra ningún tour con ese nombre
     }
 
-    // MÃ©todos para la gestiÃ³n de reservas
+    // Métodos para la gestión de reservas
     public void agregarReserva(Reserva reserva) {
         listaReservas.add(reserva);
     }
@@ -101,21 +100,21 @@ public class Agencia {
     }
     
     
- // MÃ©todo para eliminar una reserva por su cÃ³digo
+ // Método para eliminar una reserva por su código
     public void eliminarReservaPorCodigo(int codigoReserva) {
         boolean reservaEncontrada = false;
         for (Reserva reserva : listaReservas) {
             if (reserva.getCodigoReserva() == codigoReserva) {
                 listaReservas.remove(reserva);
                 reservaEncontrada = true;
-                // Mostrar ventana emergente confirmando la eliminaciÃ³n de la reserva
-                JOptionPane.showMessageDialog(null, "Usted acaba de borrar la reserva del cliente " + reserva.getCliente().getNombre() + " con cÃ³digo " + reserva.getCodigoReserva() + " en el hotel " + reserva.getNombreHotel() + " satisfactoriamente.");
-                break; // Terminar el bucle despuÃ©s de eliminar la reserva
+                // Mostrar ventana emergente confirmando la eliminación de la reserva
+                JOptionPane.showMessageDialog(null, "Usted acaba de borrar la reserva del cliente " + reserva.getCliente().getNombre() + " con código " + reserva.getCodigoReserva() + " en el hotel " + reserva.getNombreHotel() + " satisfactoriamente.");
+                break; // Terminar el bucle después de eliminar la reserva
             }
         }
-        // Si no se encontrÃ³ la reserva, mostrar ventana emergente indicando que el cÃ³digo de reserva no existe
+        // Si no se encontró la reserva, mostrar ventana emergente indicando que el código de reserva no existe
         if (!reservaEncontrada) {
-            JOptionPane.showMessageDialog(null, "El cÃ³digo de la reserva no existe.");
+            JOptionPane.showMessageDialog(null, "El código de la reserva no existe.");
         }
     }
     
@@ -127,7 +126,7 @@ public class Agencia {
             boolean clienteConReservas = false;
             for (Reserva reserva : listaReservas) {
                 if (reserva.getCliente() == cliente) {
-                    sb.append("[CÃ³digo de reserva: ").append(reserva.getCodigoReserva())
+                    sb.append("[Código de reserva: ").append(reserva.getCodigoReserva())
                       .append(", Nombre del hotel: ").append(reserva.getNombreHotel())
                       .append(", Fecha de inicio: ").append(reserva.getFechaInicio())
                       .append(", Fecha de fin: ").append(reserva.getFechaFin())

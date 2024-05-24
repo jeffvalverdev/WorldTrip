@@ -1,8 +1,4 @@
-package wordlTrip.modelo;
-
-import wordlTrip.modelo.Cliente;
-
-import wordlTrip.modelo.Tour;
+package worldTrip.modelo;
 
 public class Reserva {
 	
@@ -106,6 +102,7 @@ public class Reserva {
     public Cliente getCliente() {
         return cliente;
     }
+    
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
