@@ -1,4 +1,8 @@
-package modelo;
+package wordlTrip.modelo;
+
+import wordlTrip.modelo.Cliente;
+
+import wordlTrip.modelo.Tour;
 
 public class Reserva {
 	

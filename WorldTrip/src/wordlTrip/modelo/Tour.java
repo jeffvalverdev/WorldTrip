@@ -1,4 +1,4 @@
-package modelo;
+package wordlTrip.modelo;
 
 public class Tour {
     private String codigoTour;

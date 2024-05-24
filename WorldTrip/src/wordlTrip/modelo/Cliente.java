@@ -1,4 +1,4 @@
-package modelo;
+package wordlTrip.modelo;
 
 public class Cliente {
 	
@@ -13,6 +13,7 @@ public class Cliente {
 
     public Cliente(String nombre, String apellido, String email, String telefono) {
         this.codigoCliente = ++contadorClientes; 
+        this.nombre=nombre;
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
