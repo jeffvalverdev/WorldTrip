@@ -19,7 +19,7 @@ public class ClienteVista extends JFrame {
 
     public ClienteVista(Agencia agencia) {
         this.agencia = agencia;
-        setTitle("Gestión de Clientes");
+        setTitle("Gestiï¿½n de Clientes");
         setSize(700, 500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -59,7 +59,7 @@ public class ClienteVista extends JFrame {
 
         gbc.gridx = 0;
         gbc.gridy = 3;
-        panel.add(new JLabel("Teléfono:"), gbc);
+        panel.add(new JLabel("Telefono:"), gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 3;
@@ -84,11 +84,11 @@ public class ClienteVista extends JFrame {
 
                 JOptionPane.showMessageDialog(null,
                     "Nuevo cliente creado satisfactoriamente:\n" +
-                    "Código: " + nuevoCliente.getCodigo() + "\n" +
+                    "Codigo: " + nuevoCliente.getCodigo() + "\n" +
                     "Nombre: " + nombre + "\n" +
                     "Apellido: " + apellido + "\n" +
                     "Email: " + email + "\n" +
-                    "Teléfono: " + telefono,
+                    "Telefono: " + telefono,
                     "Cliente Creado",
                     JOptionPane.INFORMATION_MESSAGE);
 
@@ -109,7 +109,7 @@ public class ClienteVista extends JFrame {
                 dispose();
             }
         });
-        gbc.anchor = GridBagConstraints.CENTER; // Alineación vertical al centro
+        gbc.anchor = GridBagConstraints.CENTER; // Alineaciï¿½n vertical al centro
         panel.add(btnSalir, gbc);
 
         add(panel);

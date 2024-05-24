@@ -29,7 +29,7 @@ public class ReservaVista extends JFrame {
 
     public ReservaVista(Agencia agencia) {
         this.agencia = agencia;
-        setTitle("Gestión de Reservas");
+        setTitle("Gestion de Reservas");
         setSize(700,500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Cierra solo esta ventana
         setLocationRelativeTo(null); // Centra la ventana en la pantalla
@@ -42,7 +42,7 @@ public class ReservaVista extends JFrame {
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.EAST;
-        panel.add(new JLabel("Código del Cliente:"), gbc);
+        panel.add(new JLabel("Codigo del Cliente:"), gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 0;
@@ -62,7 +62,7 @@ public class ReservaVista extends JFrame {
 
         gbc.gridx = 0;
         gbc.gridy = 2;
-        panel.add(new JLabel("Número de Personas:"), gbc);
+        panel.add(new JLabel("Numero de Personas:"), gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 2;
@@ -107,14 +107,14 @@ public class ReservaVista extends JFrame {
 
         gbc.gridx = 0;
         gbc.gridy = 7;
-        panel.add(new JLabel("Dirección:"), gbc);
+        panel.add(new JLabel("Direccion:"), gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 7;
         txtDireccion = new JTextField(15);
         panel.add(txtDireccion, gbc);
 
-        // Añadir el JComboBox para seleccionar el tour
+        // Aï¿½adir el JComboBox para seleccionar el tour
         gbc.gridx = 0;
         gbc.gridy = 8;
         panel.add(new JLabel("Tour:"), gbc);
@@ -122,23 +122,23 @@ public class ReservaVista extends JFrame {
         gbc.gridx = 1;
         gbc.gridy = 8;
         cmbTours = new JComboBox<>();
-        cmbTours.addItem("Ninguno"); // Opción por defecto
+        cmbTours.addItem("Ninguno"); // Opciï¿½n por defecto
         // Llenar el JComboBox con los nombres de los tours disponibles
         for (Tour tour : agencia.getListaTours()) {
             cmbTours.addItem(tour.getNombreTour());
         }
         panel.add(cmbTours, gbc);
 
-     // Botón para crear reserva
+     // Botï¿½n para crear reserva
         gbc.gridx = 0;
         gbc.gridy = 9;
         gbc.gridwidth = 2; // Ocupar dos columnas
-        gbc.anchor = GridBagConstraints.CENTER; // Centrar el botón
+        gbc.anchor = GridBagConstraints.CENTER; // Centrar el botï¿½n
         gbc.fill = GridBagConstraints.NONE; // Restablecer la propiedad de relleno
         JButton btnCrearReserva = new JButton("Crear Reserva");
         btnCrearReserva.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Aquí puedes manejar la lógica para crear una nueva reserva
+                // Aquï¿½ puedes manejar la lï¿½gica para crear una nueva reserva
                 try {
                     int codigoCliente = Integer.parseInt(txtCodigoCliente.getText());
                     String nombreHotel = txtNombreHotel.getText();
@@ -149,7 +149,7 @@ public class ReservaVista extends JFrame {
                     String ciudad = txtCiudad.getText();
                     String direccion = txtDireccion.getText();
 
-                    // Buscar al cliente por su código
+                    // Buscar al cliente por su cï¿½digo
                     Cliente cliente = agencia.buscarClientePorCodigo(codigoCliente);
 
                     if (cliente != null) {
@@ -172,19 +172,19 @@ public class ReservaVista extends JFrame {
                         // Mostrar un mensaje emergente con los datos de la reserva
                         JOptionPane.showMessageDialog(null,
                                 "Nueva reserva creada satisfactoriamente:\n" +
-                                        "Código de Reserva: " + nuevaReserva.getCodigoReserva() + "\n" +
+                                        "Codigo de Reserva: " + nuevaReserva.getCodigoReserva() + "\n" +
                                         "Nombre del Hotel: " + nombreHotel + "\n" +
-                                        "Número de Personas: " + numPersonas + "\n" +
+                                        "Numero de Personas: " + numPersonas + "\n" +
                                         "Fecha de Inicio: " + fechaInicio + "\n" +
                                         "Fecha de Fin: " + fechaFin + "\n" +
                                         "Coste Total: " + costeTotal + "\n" +
                                         "Ciudad: " + ciudad + "\n" +
                                         "Tour: " + (tour != null ? tour.getNombreTour() : "Ninguno") + "\n" +
-                                        "Dirección: " + direccion,
+                                        "Direccion: " + direccion,
                                 "Reserva Creada",
                                 JOptionPane.INFORMATION_MESSAGE);
 
-                        // Limpiar los campos de texto después de crear la reserva
+                        // Limpiar los campos de texto despuï¿½s de crear la reserva
                         txtCodigoCliente.setText("");
                         txtNombreHotel.setText("");
                         txtNumPersonas.setText("");
@@ -195,17 +195,17 @@ public class ReservaVista extends JFrame {
                         txtDireccion.setText("");
                     } else {
                         // Mostrar un mensaje de error si no se encuentra el cliente
-                        JOptionPane.showMessageDialog(null, "No se encontró un cliente con el código proporcionado.", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "No se encontrï¿½ un cliente con el cï¿½digo proporcionado.", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 } catch (NumberFormatException ex) {
-                    // Mostrar un mensaje de error si los datos no son válidos
-                    JOptionPane.showMessageDialog(null, "Por favor ingresa datos válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    // Mostrar un mensaje de error si los datos no son vï¿½lidos
+                    JOptionPane.showMessageDialog(null, "Por favor ingresa datos vï¿½lidos.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
         panel.add(btnCrearReserva, gbc);
         
-     // Botón "Salir"
+     // Botï¿½n "Salir"
         gbc.gridy = 10;
         JButton btnSalir = new JButton("Salir");
         btnSalir.addActionListener(new ActionListener() {

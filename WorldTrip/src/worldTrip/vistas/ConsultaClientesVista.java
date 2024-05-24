@@ -30,16 +30,16 @@ public class ConsultaClientesVista extends JFrame {
         JPanel panel = new JPanel(new BorderLayout());
 
         // Crear la tabla y el modelo de tabla
-        tableModel = new DefaultTableModel(new Object[]{"Código", 
-        		"Nombre", "Apellido", "Email", "Teléfono",}, 0);
+        tableModel = new DefaultTableModel(new Object[]{"Codigo", 
+        		"Nombre", "Apellido", "Email", "Telefono",}, 0);
         table = new JTable(tableModel);
         cargarDatosClientes(); // Cargar los datos reales de los clientes
 
-        // Añadir la tabla a un JScrollPane
+        // Aï¿½adir la tabla a un JScrollPane
         JScrollPane scrollPane = new JScrollPane(table);
         panel.add(scrollPane, BorderLayout.CENTER);
 
-        // Crear el botón de actualizar
+        // Crear el botï¿½n de actualizar
         JButton btnActualizar = new JButton("Actualizar");
         btnActualizar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -47,7 +47,7 @@ public class ConsultaClientesVista extends JFrame {
             }
         });
 
-        // Crear el botón de salir
+        // Crear el botï¿½n de salir
         JButton btnSalir = new JButton("Salir");
         btnSalir.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -60,10 +60,10 @@ public class ConsultaClientesVista extends JFrame {
         btnPanel.add(btnActualizar);
         btnPanel.add(btnSalir);
 
-        // Añadir el panel de botones a la parte inferior del panel principal
+        // Aï¿½adir el panel de botones a la parte inferior del panel principal
         panel.add(btnPanel, BorderLayout.SOUTH);
 
-        // Añadir el panel principal al frame
+        // Aï¿½adir el panel principal al frame
         add(panel);
     }
 
@@ -82,8 +82,8 @@ public class ConsultaClientesVista extends JFrame {
         // Crear una instancia de Agencia y agregar algunos clientes
         Agencia agencia = new Agencia();
         // Agregar clientes de prueba
-        agencia.agregarCliente(new Cliente("Juan", "Pérez", "juan@example.com", "123456789"));
-        agencia.agregarCliente(new Cliente("María", "López", "maria@example.com", "987654321"));
+        agencia.agregarCliente(new Cliente("Juan", "Perez", "juan@example.com", "123456789"));
+        agencia.agregarCliente(new Cliente("Marï¿½a", "Lopez", "maria@example.com", "987654321"));
 
         // Mostrar la vista con la instancia de Agencia creada
         ConsultaClientesVista vista = new ConsultaClientesVista(agencia);

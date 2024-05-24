@@ -23,7 +23,7 @@ public class Menu extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel panelPrincipal;
-    private Agencia agencia; // Define la instancia de Agencia
+    private Agencia agencia; 
 
     /**
      * Launch the application.
